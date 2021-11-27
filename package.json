@@ -1,15 +1,21 @@
 {
-  "name": "todo",
+  "name": "todoAPI",
   "version": "1.0.0",
-  "description": "",
+  "description": "ToDo APP do Modulo 4",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js"
   },
-  "author": "Caio Cavalcanti",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "g": "^2.0.1",
+    "js-sha256": "^0.9.0",
+    "sqlite3": "^5.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
