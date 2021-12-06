@@ -1,10 +1,15 @@
 const express = require("express");
+const cors = require("cors");
 
 const router = require("./router/router");
 
-const { APP_PORT, APP_NAME } = require("./utils/appConfig");
+const APP_PORT = process.env.PORT 
+
+const { APP_NAME } = require("./utils/appConfig");
 
 const app = express();
+
+app.use(cors());
 
 app.use("/", router);
 

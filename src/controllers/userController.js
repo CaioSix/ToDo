@@ -6,36 +6,18 @@ class UserController {
     this.dbConn = dbConn;
   }
 
+  show = (req, res) => {
+    const id = req.params.id;
 
-  show = async (req, res) => {
-
-    try{
-        let user = await this.dbConn
-        .getUserById(req.params.id)
-        if(user.length == 0) {
-            console.log("Usuário não existe.")
-            res.send("Usuário não existe.")
-        } else {
-            res.send(user)
-        }
-        
-        
-    } catch(error) {
-        console.log('Erro da requisição: ' + error)
-        res.send(error)
-    }
-    
-
-    //this.dbConn.getUserById(req.params.id)
-        
-        // .then((user) => {
-        //     res.send(user)
-        // })
-        // .catch((error) => {
-        //     res.send(error)
-        // })
-}
-
+    this.dbConn
+      .getUserByID(id)
+      .then((user) => {
+        res.send(user);
+      })
+      .catch((error) => {
+        res.send(error);
+      });
+  };
 
   index = (req, res) => {
     this.dbConn
